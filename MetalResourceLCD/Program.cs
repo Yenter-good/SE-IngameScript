@@ -17,13 +17,13 @@ using VRage.Game.ModAPI.Ingame;
 using VRage.Game.ModAPI.Ingame.Utilities;
 using VRage.Game.ObjectBuilders.Definitions;
 using VRageMath;
-using VRageRender;
+
 
 namespace IngameScript
 {
     partial class Program : MyGridProgram
     {
-        private List<IMyInventory> _allInventories = new List<IMyInventory>();
+        private List<VRage.Game.ModAPI.Ingame.IMyInventory> _allInventories = new List<VRage.Game.ModAPI.Ingame.IMyInventory>();
 
         private Dictionary<string, string> _translate = new Dictionary<string, string>();
 
@@ -45,12 +45,37 @@ namespace IngameScript
                     _allInventories.Add(inventory);
             }
 
+            List<IMyRefinery> allRefineries = new List<IMyRefinery>();
+            List<IMyAssembler> allAssemblers = new List<IMyAssembler>();
+            List<IMyGasGenerator> allOxygenGenerators = new List<IMyGasGenerator>();
+            GridTerminalSystem.GetBlocksOfType(allRefineries);
+            GridTerminalSystem.GetBlocksOfType(allAssemblers);
+            GridTerminalSystem.GetBlocksOfType(allOxygenGenerators);
+            allRefineries.ForEach(p =>
+            {
+                var inventory = p.GetInventory();
+                if (inventory != null)
+                    _allInventories.Add(inventory);
+            });
+            allAssemblers.ForEach(p =>
+            {
+                var inventory = p.GetInventory();
+                if (inventory != null)
+                    _allInventories.Add(inventory);
+            });
+            allOxygenGenerators.ForEach(p =>
+            {
+                var inventory = p.GetInventory();
+                if (inventory != null)
+                    _allInventories.Add(inventory);
+            });
+
             List<IMyTextPanel> allTextPanels = new List<IMyTextPanel>();
             GridTerminalSystem.GetBlocksOfType(allTextPanels);
             foreach (var textPanel in allTextPanels)
             {
                 var name = textPanel.DisplayNameText;
-                if (name.Contains("金属材料"))
+                if (name.Contains("材料"))
                     _textSurfaces.Add(textPanel as IMyTextSurface);
             }
 
