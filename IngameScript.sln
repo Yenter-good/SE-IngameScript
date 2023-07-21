@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PairDoor", "PairDoor\PairDoor.csproj", "{D7A0AE65-956C-4B3A-8B69-8119435A84BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourceLCD", "ResourceLCD\ResourceLCD.csproj", "{5EB5329E-94CA-4956-B21B-0E0E8ADB46BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7A0AE65-956C-4B3A-8B69-8119435A84BF}.Debug|x64.ActiveCfg = Debug|x64
+		{D7A0AE65-956C-4B3A-8B69-8119435A84BF}.Debug|x64.Build.0 = Debug|x64
+		{5EB5329E-94CA-4956-B21B-0E0E8ADB46BB}.Debug|x64.ActiveCfg = Debug|x64
+		{5EB5329E-94CA-4956-B21B-0E0E8ADB46BB}.Debug|x64.Build.0 = Debug|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE17C053-E483-4B6C-82AA-AA7CA0C8C2CC}
+	EndGlobalSection
+EndGlobal
